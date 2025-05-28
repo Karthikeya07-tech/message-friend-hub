@@ -41,7 +41,7 @@ export const Dashboard = () => {
             </h1>
             <div className="flex items-center gap-4">
               <div className="flex items-center gap-3">
-                <Avatar className="h-8 w-8">
+                <Avatar className="h-10 w-10">
                   <AvatarImage src={userProfile.avatarUrl} />
                   <AvatarFallback className="bg-gradient-to-r from-purple-500 to-pink-500 text-white text-sm">
                     {userProfile.fullName.charAt(0).toUpperCase()}
@@ -73,7 +73,7 @@ export const Dashboard = () => {
             <div className="flex-1">
               <UserDirectory onSelectUser={handleUserSelect} />
             </div>
-            <div className="mt-auto pt-6">
+            <div className="flex justify-center mt-8">
               <NavigationButtons />
             </div>
           </div>
