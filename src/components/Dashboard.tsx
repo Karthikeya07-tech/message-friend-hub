@@ -4,15 +4,11 @@ import { useAuth } from '@/contexts/AuthContext';
 import { UserDirectory } from './UserDirectory';
 import { ChatWindow } from './ChatWindow';
 import { NavigationButtons } from './NavigationButtons';
-import { RecentChats } from './RecentChats';
-import { CreateGroupDialog } from './CreateGroupDialog';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Users } from 'lucide-react';
 
 export const Dashboard = () => {
   const { user } = useAuth();
-  const [selectedUser, setSelectedUser] = useState<{id: string, name: string, isGroup?: boolean} | null>(null);
+  const [selectedUser, setSelectedUser] = useState<{id: string, name: string} | null>(null);
   const [userProfile, setUserProfile] = useState({
     fullName: '',
     avatarUrl: ''
@@ -29,10 +25,6 @@ export const Dashboard = () => {
 
   const handleUserSelect = (userId: string, userName: string) => {
     setSelectedUser({ id: userId, name: userName });
-  };
-
-  const handleChatSelect = (chatId: string, chatName: string, isGroup?: boolean) => {
-    setSelectedUser({ id: chatId, name: chatName, isGroup });
   };
 
   const handleBack = () => {
@@ -77,26 +69,10 @@ export const Dashboard = () => {
             onBack={handleBack}
           />
         ) : (
-          <div className="space-y-6">
-            {/* Recent Chats Section */}
-            <RecentChats onSelectChat={handleChatSelect} />
-            
-            {/* Quick Actions Section */}
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2 text-lg">
-                  <Users className="h-5 w-5 text-purple-600" />
-                  Quick Actions
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="flex gap-4">
-                  <CreateGroupDialog />
-                </div>
-              </CardContent>
-            </Card>
-            
-            {/* Navigation Buttons */}
+          <div className="flex flex-col min-h-[calc(100vh-200px)]">
+            <div className="flex-1">
+              <UserDirectory onSelectUser={handleUserSelect} />
+            </div>
             <div className="flex justify-center mt-8">
               <NavigationButtons />
             </div>
