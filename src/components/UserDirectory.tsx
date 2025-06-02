@@ -45,7 +45,7 @@ export const UserDirectory: React.FC<UserDirectoryProps> = ({ onSelectUser }) =>
   if (loading) {
     return (
       <div className="flex items-center justify-center h-64">
-        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-indigo-600"></div>
+        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-red"></div>
       </div>
     );
   }
@@ -53,13 +53,13 @@ export const UserDirectory: React.FC<UserDirectoryProps> = ({ onSelectUser }) =>
   return (
     <div className="space-y-4">
       <div className="flex items-center gap-2 mb-6">
-        <Users className="h-6 w-6 text-indigo-600" />
-        <h2 className="text-xl font-semibold">All Users</h2>
+        <Users className="h-6 w-6 text-red" />
+        <h2 className="text-xl font-semibold text-dark-grey dark:text-light-pink">All Users</h2>
       </div>
       
       {profiles.length === 0 ? (
-        <Card>
-          <CardContent className="p-6 text-center text-gray-500">
+        <Card className="bg-white border-very-light-grey">
+          <CardContent className="p-6 text-center text-light-grey">
             No other users found. Be the first to start a conversation!
           </CardContent>
         </Card>
@@ -68,23 +68,23 @@ export const UserDirectory: React.FC<UserDirectoryProps> = ({ onSelectUser }) =>
           {profiles.map((profile) => (
             <Card 
               key={profile.id} 
-              className="cursor-pointer hover:shadow-md transition-shadow"
+              className="cursor-pointer hover:shadow-md transition-shadow bg-white border-very-light-grey hover:border-dark-pink"
               onClick={() => onSelectUser(profile.id, profile.full_name)}
             >
               <CardContent className="p-4">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-3">
                     <Avatar>
-                      <AvatarFallback>
+                      <AvatarFallback className="bg-red text-white">
                         {profile.full_name.charAt(0).toUpperCase()}
                       </AvatarFallback>
                     </Avatar>
                     <div>
-                      <h3 className="font-medium">{profile.full_name}</h3>
-                      <p className="text-sm text-gray-600">{profile.email}</p>
+                      <h3 className="font-medium text-dark-grey">{profile.full_name}</h3>
+                      <p className="text-sm text-light-grey">{profile.email}</p>
                     </div>
                   </div>
-                  <MessageCircle className="h-5 w-5 text-indigo-600" />
+                  <MessageCircle className="h-5 w-5 text-red" />
                 </div>
               </CardContent>
             </Card>

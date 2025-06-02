@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -19,6 +20,16 @@ export default {
 		},
 		extend: {
 			colors: {
+				// Custom color palette
+				'light-pink': '#f3879c',
+				'very-light-grey': '#bbbdbf',
+				'red': '#a32330',
+				'dark-pink': '#cc4c5c',
+				'light-grey': '#717373',
+				'bright-pink': '#e75562',
+				'dark-grey': '#2a2a2a',
+				
+				// Shadcn colors mapped to your palette
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',

@@ -47,11 +47,11 @@ export const AuthForm = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100">
-      <Card className="w-full max-w-md">
+    <div className="min-h-screen flex items-center justify-center bg-light-pink">
+      <Card className="w-full max-w-md bg-white border-dark-pink">
         <CardHeader className="text-center">
-          <CardTitle className="text-2xl font-bold text-indigo-600">Cynefin</CardTitle>
-          <CardDescription>
+          <CardTitle className="text-2xl font-bold text-red">Cynefin</CardTitle>
+          <CardDescription className="text-light-grey">
             {isLogin ? 'Sign in to your account' : 'Create your account'}
           </CardDescription>
         </CardHeader>
@@ -59,7 +59,7 @@ export const AuthForm = () => {
           <form onSubmit={handleSubmit} className="space-y-4">
             {!isLogin && (
               <div className="space-y-2">
-                <Label htmlFor="fullName">Full Name</Label>
+                <Label htmlFor="fullName" className="text-dark-grey">Full Name</Label>
                 <Input
                   id="fullName"
                   type="text"
@@ -67,11 +67,12 @@ export const AuthForm = () => {
                   onChange={(e) => setFullName(e.target.value)}
                   required={!isLogin}
                   placeholder="Enter your full name"
+                  className="border-very-light-grey focus:border-red"
                 />
               </div>
             )}
             <div className="space-y-2">
-              <Label htmlFor="email">Email</Label>
+              <Label htmlFor="email" className="text-dark-grey">Email</Label>
               <Input
                 id="email"
                 type="email"
@@ -79,10 +80,11 @@ export const AuthForm = () => {
                 onChange={(e) => setEmail(e.target.value)}
                 required
                 placeholder="Enter your email"
+                className="border-very-light-grey focus:border-red"
               />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="password">Password</Label>
+              <Label htmlFor="password" className="text-dark-grey">Password</Label>
               <Input
                 id="password"
                 type="password"
@@ -90,9 +92,10 @@ export const AuthForm = () => {
                 onChange={(e) => setPassword(e.target.value)}
                 required
                 placeholder="Enter your password"
+                className="border-very-light-grey focus:border-red"
               />
             </div>
-            <Button type="submit" className="w-full" disabled={loading}>
+            <Button type="submit" className="w-full bg-red hover:bg-dark-pink text-white" disabled={loading}>
               {loading ? 'Loading...' : isLogin ? 'Sign In' : 'Sign Up'}
             </Button>
           </form>
@@ -100,7 +103,7 @@ export const AuthForm = () => {
             <button
               type="button"
               onClick={() => setIsLogin(!isLogin)}
-              className="text-sm text-indigo-600 hover:underline"
+              className="text-sm text-red hover:underline"
             >
               {isLogin ? "Don't have an account? Sign up" : 'Already have an account? Sign in'}
             </button>
