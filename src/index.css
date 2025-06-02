@@ -5,84 +5,84 @@
 
 @layer base {
   :root {
-    /* Using your color palette */
-    --background: 243 135 156; /* Light Pink as main background */
-    --foreground: 42 42 42; /* Dark Grey for text */
+    /* Using your approved color palette - blues, grays, whites, blacks only */
+    --background: 255 255 255; /* White as main background */
+    --foreground: 33 37 41; /* Dark gray for text */
 
     --card: 255 255 255; /* White for cards */
-    --card-foreground: 42 42 42; /* Dark Grey */
+    --card-foreground: 33 37 41; /* Dark gray */
 
     --popover: 255 255 255;
-    --popover-foreground: 42 42 42;
+    --popover-foreground: 33 37 41;
 
-    --primary: 163 35 48; /* Red as primary */
+    --primary: 0 123 255; /* Blue as primary */
     --primary-foreground: 255 255 255; /* White text on primary */
 
-    --secondary: 187 189 191; /* Very Light Grey */
-    --secondary-foreground: 42 42 42;
+    --secondary: 248 249 250; /* Light gray */
+    --secondary-foreground: 33 37 41;
 
-    --muted: 187 189 191; /* Very Light Grey */
-    --muted-foreground: 113 115 115; /* Light Grey */
+    --muted: 248 249 250; /* Light gray */
+    --muted-foreground: 108 117 125; /* Medium gray */
 
-    --accent: 231 85 98; /* Bright Pink */
+    --accent: 0 123 255; /* Blue */
     --accent-foreground: 255 255 255;
 
-    --destructive: 163 35 48; /* Red */
+    --destructive: 220 53 69; /* Red for destructive actions */
     --destructive-foreground: 255 255 255;
 
-    --border: 204 76 92; /* Dark Pink */
-    --input: 187 189 191; /* Very Light Grey */
-    --ring: 163 35 48; /* Red */
+    --border: 222 226 230; /* Light border */
+    --input: 248 249 250; /* Light gray */
+    --ring: 0 123 255; /* Blue */
 
     --radius: 0.5rem;
 
-    --sidebar-background: 243 135 156; /* Light Pink */
-    --sidebar-foreground: 42 42 42; /* Dark Grey */
-    --sidebar-primary: 163 35 48; /* Red */
+    --sidebar-background: 255 255 255; /* White */
+    --sidebar-foreground: 33 37 41; /* Dark gray */
+    --sidebar-primary: 0 123 255; /* Blue */
     --sidebar-primary-foreground: 255 255 255;
-    --sidebar-accent: 231 85 98; /* Bright Pink */
+    --sidebar-accent: 0 123 255; /* Blue */
     --sidebar-accent-foreground: 255 255 255;
-    --sidebar-border: 204 76 92; /* Dark Pink */
-    --sidebar-ring: 163 35 48; /* Red */
+    --sidebar-border: 222 226 230; /* Light border */
+    --sidebar-ring: 0 123 255; /* Blue */
   }
 
   .dark {
-    --background: 42 42 42; /* Dark Grey as dark background */
-    --foreground: 243 135 156; /* Light Pink for dark text */
+    --background: 33 37 41; /* Dark gray as dark background */
+    --foreground: 255 255 255; /* White for dark text */
 
-    --card: 42 42 42;
-    --card-foreground: 243 135 156;
+    --card: 52 58 64;
+    --card-foreground: 255 255 255;
 
-    --popover: 42 42 42;
-    --popover-foreground: 243 135 156;
+    --popover: 52 58 64;
+    --popover-foreground: 255 255 255;
 
-    --primary: 231 85 98; /* Bright Pink as dark primary */
-    --primary-foreground: 42 42 42;
+    --primary: 0 123 255; /* Blue as dark primary */
+    --primary-foreground: 255 255 255;
 
-    --secondary: 113 115 115; /* Light Grey */
-    --secondary-foreground: 243 135 156;
+    --secondary: 52 58 64; /* Dark gray */
+    --secondary-foreground: 255 255 255;
 
-    --muted: 113 115 115;
-    --muted-foreground: 187 189 191;
+    --muted: 52 58 64;
+    --muted-foreground: 173 181 189;
 
-    --accent: 204 76 92; /* Dark Pink */
-    --accent-foreground: 243 135 156;
+    --accent: 0 123 255; /* Blue */
+    --accent-foreground: 255 255 255;
 
-    --destructive: 231 85 98; /* Bright Pink for destructive in dark */
-    --destructive-foreground: 42 42 42;
+    --destructive: 220 53 69; /* Red for destructive in dark */
+    --destructive-foreground: 255 255 255;
 
-    --border: 113 115 115;
-    --input: 113 115 115;
-    --ring: 231 85 98;
+    --border: 52 58 64;
+    --input: 52 58 64;
+    --ring: 0 123 255;
 
-    --sidebar-background: 42 42 42;
-    --sidebar-foreground: 243 135 156;
-    --sidebar-primary: 231 85 98;
-    --sidebar-primary-foreground: 42 42 42;
-    --sidebar-accent: 204 76 92;
-    --sidebar-accent-foreground: 243 135 156;
-    --sidebar-border: 113 115 115;
-    --sidebar-ring: 231 85 98;
+    --sidebar-background: 33 37 41;
+    --sidebar-foreground: 255 255 255;
+    --sidebar-primary: 0 123 255;
+    --sidebar-primary-foreground: 255 255 255;
+    --sidebar-accent: 0 123 255;
+    --sidebar-accent-foreground: 255 255 255;
+    --sidebar-border: 52 58 64;
+    --sidebar-ring: 0 123 255;
   }
 }
 
