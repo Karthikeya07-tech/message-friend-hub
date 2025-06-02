@@ -45,7 +45,7 @@ export const UserDirectory: React.FC<UserDirectoryProps> = ({ onSelectUser }) =>
   if (loading) {
     return (
       <div className="flex items-center justify-center h-64">
-        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary-blue"></div>
+        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary-red"></div>
       </div>
     );
   }
@@ -53,13 +53,13 @@ export const UserDirectory: React.FC<UserDirectoryProps> = ({ onSelectUser }) =>
   return (
     <div className="space-y-4">
       <div className="flex items-center gap-2 mb-6">
-        <Users className="h-6 w-6 text-primary-blue" />
-        <h2 className="text-xl font-semibold text-dark-gray dark:text-light-gray">All Users</h2>
+        <Users className="h-6 w-6 text-primary-red" />
+        <h2 className="text-xl font-semibold text-black dark:text-white">All Users</h2>
       </div>
       
       {profiles.length === 0 ? (
-        <Card className="bg-white border-border-gray">
-          <CardContent className="p-6 text-center text-medium-gray">
+        <Card className="bg-white dark:bg-dark-gray border-border-gray dark:border-medium-gray">
+          <CardContent className="p-6 text-center text-medium-gray dark:text-medium-gray">
             No other users found. Be the first to start a conversation!
           </CardContent>
         </Card>
@@ -68,23 +68,23 @@ export const UserDirectory: React.FC<UserDirectoryProps> = ({ onSelectUser }) =>
           {profiles.map((profile) => (
             <Card 
               key={profile.id} 
-              className="cursor-pointer hover:shadow-md transition-shadow bg-white border-border-gray hover:border-primary-blue"
+              className="cursor-pointer hover:shadow-md transition-shadow bg-white dark:bg-dark-gray border-border-gray dark:border-medium-gray hover:border-primary-red dark:hover:border-primary-red"
               onClick={() => onSelectUser(profile.id, profile.full_name)}
             >
               <CardContent className="p-4">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-3">
                     <Avatar>
-                      <AvatarFallback className="bg-primary-blue text-white">
+                      <AvatarFallback className="bg-primary-red text-white">
                         {profile.full_name.charAt(0).toUpperCase()}
                       </AvatarFallback>
                     </Avatar>
                     <div>
-                      <h3 className="font-medium text-dark-gray">{profile.full_name}</h3>
-                      <p className="text-sm text-medium-gray">{profile.email}</p>
+                      <h3 className="font-medium text-black dark:text-white">{profile.full_name}</h3>
+                      <p className="text-sm text-medium-gray dark:text-medium-gray">{profile.email}</p>
                     </div>
                   </div>
-                  <MessageCircle className="h-5 w-5 text-primary-blue" />
+                  <MessageCircle className="h-5 w-5 text-primary-red" />
                 </div>
               </CardContent>
             </Card>

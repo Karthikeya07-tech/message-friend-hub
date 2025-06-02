@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useRef } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 import { useAuth } from '@/contexts/AuthContext';
@@ -158,23 +157,23 @@ export const ChatWindow: React.FC<ChatWindowProps> = ({
   if (loading) {
     return (
       <div className="flex items-center justify-center h-64">
-        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-indigo-600"></div>
+        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary-red"></div>
       </div>
     );
   }
 
   return (
-    <Card className="h-[600px] flex flex-col">
+    <Card className="h-[600px] flex flex-col bg-white dark:bg-dark-gray border-border-gray dark:border-medium-gray">
       <CardHeader className="flex-row items-center space-y-0 pb-4">
-        <Button variant="ghost" size="sm" onClick={onBack} className="mr-2">
+        <Button variant="ghost" size="sm" onClick={onBack} className="mr-2 text-primary-red hover:bg-light-gray dark:hover:bg-medium-gray">
           <ArrowLeft className="h-4 w-4" />
         </Button>
         <Avatar className="h-8 w-8 mr-3">
-          <AvatarFallback>
+          <AvatarFallback className="bg-primary-red text-white">
             {recipientName.charAt(0).toUpperCase()}
           </AvatarFallback>
         </Avatar>
-        <CardTitle className="text-lg">{recipientName}</CardTitle>
+        <CardTitle className="text-lg text-black dark:text-white">{recipientName}</CardTitle>
       </CardHeader>
       
       <CardContent className="flex-1 flex flex-col p-0">
@@ -189,13 +188,13 @@ export const ChatWindow: React.FC<ChatWindowProps> = ({
               <div
                 className={`max-w-[70%] rounded-lg px-3 py-2 ${
                   message.sender_id === user?.id
-                    ? 'bg-indigo-600 text-white'
-                    : 'bg-gray-100 text-gray-900'
+                    ? 'bg-primary-red text-white'
+                    : 'bg-light-gray dark:bg-medium-gray text-black dark:text-white'
                 }`}
               >
                 <p className="text-sm">{message.content}</p>
                 <p className={`text-xs mt-1 ${
-                  message.sender_id === user?.id ? 'text-indigo-200' : 'text-gray-500'
+                  message.sender_id === user?.id ? 'text-red-200' : 'text-medium-gray dark:text-gray-400'
                 }`}>
                   {new Date(message.created_at).toLocaleTimeString([], {
                     hour: '2-digit',
@@ -208,14 +207,14 @@ export const ChatWindow: React.FC<ChatWindowProps> = ({
           <div ref={messagesEndRef} />
         </div>
         
-        <form onSubmit={sendMessage} className="p-4 border-t flex gap-2">
+        <form onSubmit={sendMessage} className="p-4 border-t border-border-gray dark:border-medium-gray flex gap-2">
           <Input
             value={newMessage}
             onChange={(e) => setNewMessage(e.target.value)}
             placeholder="Type a message..."
-            className="flex-1"
+            className="flex-1 border-border-gray focus:border-primary-red dark:border-medium-gray dark:focus:border-primary-red"
           />
-          <Button type="submit" size="sm">
+          <Button type="submit" size="sm" className="bg-primary-red hover:bg-dark-red text-white">
             <Send className="h-4 w-4" />
           </Button>
         </form>

@@ -32,26 +32,26 @@ export const Dashboard = () => {
   };
 
   return (
-    <div className="min-h-screen bg-light-gray dark:bg-dark-gray">
-      <header className="bg-white/80 dark:bg-dark-gray/80 backdrop-blur-sm shadow-lg border-b border-border-gray dark:border-medium-gray">
+    <div className="min-h-screen bg-white dark:bg-black">
+      <header className="bg-white/80 dark:bg-black/80 backdrop-blur-sm shadow-lg border-b border-border-gray dark:border-dark-gray">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-            <h1 className="text-3xl font-bold text-primary-blue dark:text-primary-blue">
+            <h1 className="text-3xl font-bold text-primary-red dark:text-primary-red">
               Cynefin
             </h1>
             <div className="flex items-center gap-4">
               <div className="flex items-center gap-3">
                 <Avatar className="h-10 w-10">
                   <AvatarImage src={userProfile.avatarUrl} />
-                  <AvatarFallback className="bg-primary-blue text-white text-sm">
+                  <AvatarFallback className="bg-primary-red text-white text-sm">
                     {userProfile.fullName.charAt(0).toUpperCase()}
                   </AvatarFallback>
                 </Avatar>
                 <div className="flex flex-col">
-                  <span className="text-sm font-medium text-dark-gray dark:text-light-gray">
+                  <span className="text-sm font-medium text-black dark:text-white">
                     {userProfile.fullName}
                   </span>
-                  <span className="text-xs text-medium-gray dark:text-border-gray">
+                  <span className="text-xs text-medium-gray dark:text-medium-gray">
                     {user?.email}
                   </span>
                 </div>

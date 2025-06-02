@@ -20,20 +20,19 @@ export default {
 		},
 		extend: {
 			colors: {
-				// Custom color palette - blues, grays, whites, blacks only
-				'primary-blue': '#007bff',
-				'light-blue': '#6c757d',
-				'dark-blue': '#0056b3',
-				'light-gray': '#f8f9fa',
-				'medium-gray': '#6c757d',
-				'dark-gray': '#212529',
-				'border-gray': '#dee2e6',
-				'text-gray': '#495057',
+				// Custom color palette - red, black, white only
+				'primary-red': '#dc2626',
+				'dark-red': '#b91c1c',
+				'light-red': '#ef4444',
+				'light-gray': '#f8fafc',
+				'medium-gray': '#64748b',
+				'dark-gray': '#1e293b',
+				'border-gray': '#e2e8f0',
+				'text-gray': '#334155',
 				'white': '#ffffff',
 				'black': '#000000',
-				'red': '#dc3545',
 				
-				// Shadcn colors mapped to your palette
+				// Shadcn colors mapped to red/black/white palette
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',

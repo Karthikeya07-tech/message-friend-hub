@@ -23,8 +23,8 @@ export const ChatsPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-light-gray dark:bg-dark-gray">
-      <header className="bg-white/80 dark:bg-dark-gray/80 backdrop-blur-sm shadow-lg border-b border-border-gray dark:border-medium-gray">
+    <div className="min-h-screen bg-white dark:bg-black">
+      <header className="bg-white/80 dark:bg-black/80 backdrop-blur-sm shadow-lg border-b border-border-gray dark:border-dark-gray">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center gap-4">
@@ -32,12 +32,12 @@ export const ChatsPage = () => {
                 variant="ghost" 
                 size="sm"
                 onClick={handleBack}
-                className="text-primary-blue dark:text-primary-blue hover:bg-light-gray dark:hover:bg-medium-gray"
+                className="text-primary-red dark:text-primary-red hover:bg-light-gray dark:hover:bg-dark-gray"
               >
                 <ArrowLeft className="h-4 w-4 mr-2" />
                 Back
               </Button>
-              <h1 className="text-3xl font-bold text-primary-blue dark:text-primary-blue">
+              <h1 className="text-3xl font-bold text-primary-red dark:text-primary-red">
                 {selectedUser ? `Chat with ${selectedUser.name}` : 'Chats'}
               </h1>
             </div>
